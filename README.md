@@ -1,6 +1,6 @@
 # faster_quran_whisper
 
-Faster-Whisper speech-to-text pipeline with VAD for Arabic transcription.
+Faster-Whisper speech-to-text pipeline with VAD for **Quran audio transcription** in Arabic.
 
 ## 🚀 Quick Start
 
@@ -25,6 +25,27 @@ To use custom audio file:
 ```bash
 python main.py /path/to/your/audio.mp3
 ```
+
+## 📥 Input Example
+
+**Input:** Quran audio file (MP3, WAV, M4A, AAC, FLAC)
+
+Example audio file: `sample/quran_test_audio.mp3`
+- Format: MP3
+- Duration: ~20 minutes (Surah Al-Kahf)
+- Sample Rate: 16kHz (auto-resampled if needed)
+
+## 📤 Output Example
+
+**Output:** Arabic text transcription
+
+Example output:
+```
+الحمد لله الذي أنزل على عبده الكتاب ولم يجعل له عوجا
+قيما لينذر بأسا شديدا من لدنه ويبشر المؤمنين الذين يعملون الصالحات أن لهم أجرا حسنا
+```
+
+The script processes the audio, detects speech segments, transcribes each segment, and combines them into full text.
 
 ## 📁 Folder Structure
 
