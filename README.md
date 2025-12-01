@@ -37,15 +37,43 @@ Example audio file: `sample/quran_test_audio.mp3`
 
 ## 📤 Output Example
 
-**Output:** Arabic text transcription
+**Output:** Structured transcription with timestamps for each spoken segment
 
-Example output:
+Example output format:
 ```
-الحمد لله الذي أنزل على عبده الكتاب ولم يجعل له عوجا
-قيما لينذر بأسا شديدا من لدنه ويبشر المؤمنين الذين يعملون الصالحات أن لهم أجرا حسنا
+============================================================
+🎤 TRANSCRIBING 106 SEGMENTS
+============================================================
+
+[Segment 1/106]
+   Duration: 12.85s
+   Time range: 1.25s - 14.10s
+   ✅ Transcription: ءَلحَمدُوولِللَااهِللَ ذِييييي ءَڻزَلَ عَلَاا عَپدِهِ لكِتَاابَ وَلَم يَچعَللَهُووعِ وَجَاا
+
+[Segment 2/106]
+   Duration: 19.64s
+   Time range: 15.20s - 34.84s
+   ✅ Transcription: ڨَييِمَللِ يُڻذِڗَبَءَ سَڻ شَدِييدَممِللَدُنهُ وَ يُبَششِڗَلمُءُمِنِيينَللَذِيينَ يَعمَلُوونَ ڝصَلِحَااتِ
+
+============================================================
+📊 SUMMARY
+============================================================
+Total segments: 106
+Successfully transcribed: 106
+Failed: 0
+
+============================================================
+📄 FULL TRANSCRIPTION:
+============================================================
+ءَلحَمدُوولِللَااهِللَ ذِييييي ءَڻزَلَ عَلَاا عَپدِهِ لكِتَاابَ...
+   Total length: 6995 characters
+   Total tokens (approx): ~608 words
 ```
 
-The script processes the audio, detects speech segments, transcribes each segment, and combines them into full text.
+The output includes:
+- **Per-segment transcription** with timestamps (start/end time, duration)
+- **Full combined transcription** with all segments merged
+- **Summary statistics** (total segments, success rate)
 
 ## 📁 Folder Structure
 
@@ -74,7 +102,14 @@ faster-whisper/
 
 1. **VAD Processing**: Detects speech segments in audio
 2. **Transcription**: Each segment transcribed using Faster-Whisper
-3. **Combination**: All transcriptions merged into full text
+3. **Combination**: All transcriptions merged into full text with timestamps
+
+## ⚡ Performance
+
+- **CPU optimized**: Uses int8 quantization for fast CPU inference
+- **Real-time factor**: ~14.6x faster than real-time (20 min audio in ~82 seconds)
+- **Multi-threaded**: Configurable CPU threads (default: 4)
+- **Efficient**: CTranslate2 backend for optimized inference
 
 ## ⚙️ Configuration
 
