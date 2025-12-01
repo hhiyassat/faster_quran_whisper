@@ -1,0 +1,15 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+/tmp/
+/comparison_results/
+/VAD/venv/
+/VAD/chunks/
+/VAD/__pycache__/

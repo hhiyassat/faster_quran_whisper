@@ -1,0 +1,7 @@
+faster-whisper
+ctranslate2
+transformers[torch]>=4.23
+librosa
+soundfile
+onnxruntime
+
