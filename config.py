@@ -6,15 +6,15 @@ BASE_DIR = Path(__file__).resolve().parent
 SAMPLE_RATE = 16000
 
 WHISPER_CONFIG = {
-    "model_dir": BASE_DIR / "model-ct2",
+    "model_dir": BASE_DIR / "models" / "whisper",
     "device": "cpu",
     "compute_type": "int8",
     "cpu_threads": 4,
 }
 
 VAD_CONFIG = {
-    "model_dir": BASE_DIR / "VAD",
-    "model_path": BASE_DIR / "VAD" / "silero_vad.onnx",
+    "model_dir": BASE_DIR / "models" / "vad",
+    "model_path": BASE_DIR / "models" / "vad" / "silero_vad.onnx",
     "model_url": "https://huggingface.co/onnx-community/silero-vad/resolve/main/onnx/model.onnx",
     "chunk_duration_ms": 32,
     "threshold": 0.25,
@@ -40,7 +40,7 @@ TRANSCRIBE_CONFIG = {
 }
 
 AUDIO_CONFIG = {
-    "default_file": BASE_DIR / "quran_test_audio.mp3",
+    "default_file": BASE_DIR / "sample" / "quran_test_audio.mp3",
     "supported_formats": [".mp3", ".wav", ".m4a", ".aac", ".flac"],
 }
 

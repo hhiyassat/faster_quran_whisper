@@ -8,7 +8,7 @@ from vad.processor import extract_speech_segments
 from transcriber.processor import transcribe_segment
 
 BASE_DIR = Path(__file__).resolve().parent
-VAD_DIR = BASE_DIR / "VAD"
+VAD_DIR = BASE_DIR / "models" / "vad"
 
 if str(VAD_DIR) not in sys.path:
     sys.path.insert(0, str(VAD_DIR))

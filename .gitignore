@@ -10,6 +10,6 @@ Thumbs.db
 *.tmp
 /tmp/
 /comparison_results/
-/VAD/venv/
-/VAD/chunks/
-/VAD/__pycache__/
+/models/vad/venv/
+/models/vad/chunks/
+/models/vad/__pycache__/

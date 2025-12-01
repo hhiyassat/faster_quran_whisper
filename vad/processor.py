@@ -4,7 +4,7 @@ from pathlib import Path
 import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-VAD_DIR = BASE_DIR / "VAD"
+VAD_DIR = BASE_DIR / "models" / "vad"
 
 if str(VAD_DIR) not in sys.path:
     sys.path.insert(0, str(VAD_DIR))
